@@ -1,5 +1,5 @@
 const container = document.querySelector('.container');
-const margin = 2;
+const gap = 2;
 const border = 1;
 
 drawSketchPad();
@@ -9,8 +9,9 @@ function drawGrid(size) {
     const boardSize = window.innerHeight * 0.9; 
 
     container.style.width = boardSize + 'px';
+    container.style.height = boardSize + 'px';
 
-    const cellSize = (boardSize / size) - 2 * margin;
+    const cellSize = Math.floor((boardSize - gap * (size - 1)) / size);
 
     for (let i = 0; i < size * size; i++) {
         const square  = document.createElement('div');
@@ -19,6 +20,7 @@ function drawGrid(size) {
         square.style.height = cellSize + 'px';
         container.appendChild(square);
     }
+    console.log('total cells:', container.children.length); 
 }
 
 function drawSketchPad() {

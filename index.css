@@ -2,12 +2,15 @@
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
 }
 
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
 input {
@@ -17,16 +20,16 @@ input {
     text-align: center;
 }
 .container {
-    margin: 10px auto;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     flex-wrap: wrap;
+    gap: 2px;
+    height: 100%;
+    width: 100%;
 }
 .row {
-    box-sizing: border-box;
     border: 1px solid #000; 
-    margin: 2px;
 }
 .hiddenRefreshButton {
     display: none;
