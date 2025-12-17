@@ -29,10 +29,17 @@ function drawSketchPad() {
     input.addEventListener("keydown", (e) => {
         if (e.key === 'Enter') {
             size = e.target.value;
-            input.style.display = 'none';
-            text.forEach(p => {p.textContent = '';});
-            btn.style.display='block';
-            drawGrid(size);
+            if (size >= 100) {
+                document.querySelector('#prompt').textContent = 'The number is more than 100. Please enter a lower number';
+                document.querySelector('#pressEnter').textContent = '';
+                return;
+            }
+            if (size < 100) {
+                input.style.display = 'none';
+                text.forEach(p => {p.textContent = '';});
+                btn.style.display='block';
+                drawGrid(size);
+            }
         }
         randomColoring();
         refresh();
