@@ -23,11 +23,7 @@ input {
     flex-wrap: wrap;
 }
 .row {
-    background-color: rosybrown;
     box-sizing: border-box;
     border: 1px solid #000; 
     margin: 2px;
-}
-.row:hover {
-    background-color: aqua;
 }

@@ -18,7 +18,6 @@ function drawGrid(size) {
         square.style.width = cellSize + 'px';
         square.style.height = cellSize + 'px';
         container.appendChild(square);
-        console.log(size)
     }
 }
 
@@ -31,7 +30,20 @@ function drawSketchPad() {
             size = e.target.value;
             input.style.display = 'none';
             text.forEach(p => {p.textContent = '';})
-            console.log('Enter нажат, size:', size);
         }
         drawGrid(size);
+        randomColoring();
 })}
+
+function randomColoring() {
+let square = document.querySelectorAll('.row');
+square.forEach((cell) => {
+    cell.addEventListener("mouseenter", (e) => {
+        const r = Math.floor(Math.random() * 256);
+        const g = Math.floor(Math.random() * 256);
+        const b = Math.floor(Math.random() * 256);
+        cell.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+    })
+    cell.addEventListener("mouseleave", (e) => cell.style.backgroundColor = `white`)
+})
+}
