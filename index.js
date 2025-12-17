@@ -25,25 +25,45 @@ function drawSketchPad() {
     let size;
     const text = document.querySelectorAll('.text');
     const input = document.querySelector('#number');
+    const btn = document.querySelector('.hiddenRefreshButton')
     input.addEventListener("keydown", (e) => {
         if (e.key === 'Enter') {
             size = e.target.value;
             input.style.display = 'none';
-            text.forEach(p => {p.textContent = '';})
+            text.forEach(p => {p.textContent = '';});
+            btn.style.display='block';
         }
         drawGrid(size);
         randomColoring();
+        refresh();
 })}
 
 function randomColoring() {
 let square = document.querySelectorAll('.row');
 square.forEach((cell) => {
-    cell.addEventListener("mouseenter", (e) => {
+    cell.addEventListener('mouseenter', () => {
         const r = Math.floor(Math.random() * 256);
         const g = Math.floor(Math.random() * 256);
         const b = Math.floor(Math.random() * 256);
         cell.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+        cell.addEventListener("mouseleave", () => cell.style.backgroundColor = `white`)
     })
-    cell.addEventListener("mouseleave", (e) => cell.style.backgroundColor = `white`)
 })
+}
+
+function refresh(){
+    const btn = document.querySelector('.hiddenRefreshButton');
+    btn.addEventListener('click', () => {
+        const prompt = document.querySelector('#prompt');
+        const pressEnter = document.querySelector('#pressEnter');
+        const input = document.querySelector('#number');
+        const div = document.querySelectorAll('.row')
+
+        input.style.display = 'block';
+        prompt.textContent = 'What sketchpad size do you want? (enter only positive numbers)';
+        pressEnter.textContent = 'Press Enter';
+        container.innerHTML = '';
+        btn.style.display='none';
+    })
+    //btn.classList.remove('.toggle')
 }

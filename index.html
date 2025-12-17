@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <p class="text">What sketchpad size do you want? (enter only positive numbers)</p>
-    <p class="text">Press Enter</p>
+    <!-- User Input -->
+    <p class="text" id="prompt">What sketchpad size do you want? (enter only positive numbers)</p>
+    <p class="text" id="pressEnter">Press Enter</p>
     <input id="number" type="number" placeholder="Number">
-    <div class="container">
-        <div class="vertical"></div>
-    </div>
+    <!-- Grid -->
+    <div class="container"></div>
+    <!-- Refresh Button -->
+    <button class="hiddenRefreshButton">Refresh grid!</button>
     <script src="index.js"></script>
 </body>
 </html>
