@@ -5,19 +5,11 @@ const border = 1;
 drawSketchPad();
 
 function drawGrid(size) {
-// chose height to scale (because it's smaller then width)
-    const boardSize = window.innerHeight * 0.9; 
-
-    container.style.width = boardSize + 'px';
-    container.style.height = boardSize + 'px';
-
-    const cellSize = Math.floor((boardSize - gap * (size - 1)) / size);
-
     for (let i = 0; i < size * size; i++) {
         const square  = document.createElement('div');
+         square.style.width = 600 / size + 'px';
+        square.style.height = 600 / size + 'px';
         square.classList.add('row');
-        square.style.width = cellSize + 'px';
-        square.style.height = cellSize + 'px';
         container.appendChild(square);
     }
     console.log('total cells:', container.children.length); 
@@ -55,7 +47,7 @@ square.forEach((cell) => {
         const g = Math.floor(Math.random() * 256);
         const b = Math.floor(Math.random() * 256);
         cell.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-        cell.addEventListener("mouseleave", () => cell.style.backgroundColor = `white`)
+        cell.addEventListener("click", () => cell.style.backgroundColor = `white`)
     })
 })
 }
