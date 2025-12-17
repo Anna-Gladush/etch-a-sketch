@@ -32,8 +32,8 @@ function drawSketchPad() {
             input.style.display = 'none';
             text.forEach(p => {p.textContent = '';});
             btn.style.display='block';
+            drawGrid(size);
         }
-        drawGrid(size);
         randomColoring();
         refresh();
 })}
@@ -58,11 +58,16 @@ function refresh(){
         const pressEnter = document.querySelector('#pressEnter');
         const input = document.querySelector('#number');
         const div = document.querySelectorAll('.row')
-
+        input.value = '';
         input.style.display = 'block';
         prompt.textContent = 'What sketchpad size do you want? (enter only positive numbers)';
         pressEnter.textContent = 'Press Enter';
-        container.innerHTML = '';
+        
+        while (container.firstChild) {
+            container.removeChild(container.firstChild);
+        }
+
+
         btn.style.display='none';
     })
     //btn.classList.remove('.toggle')
