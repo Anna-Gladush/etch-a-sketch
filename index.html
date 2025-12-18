@@ -8,11 +8,23 @@
 </head>
 <body>
     <!-- User Input -->
+    <h1>Yours truly presents to you: Etch-a-Sketch</h1>
+
     <p class="text" id="prompt">What sketchpad size do you want? (enter only positive numbers)</p>
     <p class="text" id="pressEnter">Press Enter</p>
     <input id="number" type="number" placeholder="Number">
     <!-- Grid -->
-    <div class="container"></div>
+     <div class="outer">
+        <div class="colors">
+            <button class="col red">red</button>
+            <button class="col green">green</button>
+            <button class="col blue">blue</button>
+            <button class="col yellow">yellow</button>
+            <button class="col violet">violet</button>
+            <button class="col clear">clear</button>
+        </div>
+        <div class="container"></div>
+     </div>
     <!-- Refresh Button -->
     <button class="hiddenRefreshButton">Refresh grid!</button>
     <script src="index.js"></script>
