@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Aladin, Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -9,6 +9,14 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: #FCF8F8;
+}
+.head {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 70px;
 }
 .outer {
     display: flex;
@@ -23,8 +31,7 @@ body {
     padding-left: 20px;
 }
 h1 {
-    margin: 5px;
-    margin-left: 120px;
+    margin: 10px;
 }
 input {
     width: 100px;
@@ -34,48 +41,62 @@ input {
 }
 .container {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     align-items: flex-start;
     flex-wrap: wrap;
     width: 540px;
     height: 540px;
     margin: 20px auto;
-    box-sizing: border-box;
 }
 .row {
     border: none; 
 }
 .hiddenRefreshButton {
+    background-color: #073B4C;
+    color: white;
+    border: none;
+    border-radius: 10px;
     display: none;
     font-size: 18px;
     padding: 10px 10px;
     cursor: pointer;
-    margin-left: 110px;
+    margin-left: 60px;
 }
 
 .col {
-    width: 100px;
-    height: 100px;
+    display: none;
+    width: 50px;
+    height: 50px;
     border: none;
     margin-bottom: 1px;
     cursor: pointer;
 }
 .red {
-    background-color: red;
+    background-color: #EF476F;
 }
 .blue {
-    background-color: blue;
+    background-color: #118AB2;
 }
 .green {
-    background-color: green;
+    background-color: #06D6A0;
 }
 .yellow {
-    background-color: yellow;
+    background-color: #FFD166;
 }
-.violet {
-    background-color: purple;
+.orange {
+    background-color: #F78C6B;
+}
+.darkblue {
+    background-color: #073B4C;
 }
 .clear {
     background-color: white;
-    border: solid 0.5px black;
+    border: solid 1px rgb(195, 195, 195);
+}
+.random {
+    background: url("images/fan_10914958.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; 
+    border: solid 1px rgb(195, 195, 195)
 }
