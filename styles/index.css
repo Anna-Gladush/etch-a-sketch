@@ -94,7 +94,7 @@ input {
     border: solid 1px rgb(195, 195, 195);
 }
 .random {
-    background: url("images/fan_10914958.png");
+    background: url("../images/fan_10914958.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain; 
