@@ -22,13 +22,13 @@ body {
     display: flex;
     flex-direction: row;
     width: 100%;
+    justify-content: center;
 }
 .colors {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;
-    width: 33%;
 }
 h1 {
     margin: 10px;
@@ -60,7 +60,8 @@ input {
     font-size: 18px;
     padding: 10px 10px;
     cursor: pointer;
-    margin-left: 60px;
+    margin-top: 0px;
+    margin-left: 55px;
 }
 
 .col {
